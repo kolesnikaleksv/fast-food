@@ -10,6 +10,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { images, offers } from "@/constants";
 import { Fragment } from "react";
 import cn from "clsx";
+import CartButton from "@/components/CartButton";
 
 import "./global.css";
 
@@ -75,7 +76,7 @@ export default function Index() {
                 />
               </TouchableOpacity>
             </View>
-            <Text>Cart</Text>
+            <CartButton />
           </View>
         )}
       />
