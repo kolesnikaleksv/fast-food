@@ -12,7 +12,7 @@ import { Fragment } from "react";
 import cn from "clsx";
 import CartButton from "@/components/CartButton";
 
-import "./global.css";
+import "../global.css";
 
 export default function Index() {
   return (
