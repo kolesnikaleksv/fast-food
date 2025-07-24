@@ -13,13 +13,13 @@ const SignIn = () => {
     const { email, password } = form;
     if (!email || !password)
       return Alert.alert(
-        "Eroor",
+        "Error",
         "Please enter valid email address & password.",
       );
     setIsSubmitting(true);
     try {
       await signIn({ email, password });
-      
+
       router.replace("/");
     } catch (error: any) {
       Alert.alert("Error", error.message);
