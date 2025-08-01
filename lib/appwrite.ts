@@ -15,7 +15,8 @@ export const appwriteConfig = {
   databaseId: "6870ab1c00361ab89035",
   userCollectionId: "6870ab88003be5994be8",
 };
-const client = new Client()
+const client = new Client();
+client
   .setEndpoint(appwriteConfig.endpoint) // Your API Endpoint
   .setProject(appwriteConfig.projectId) // Your project ID
   .setPlatform(appwriteConfig.platform);
@@ -25,13 +26,14 @@ export const databases = new Databases(client);
 export const avatars = new Avatars(client);
 
 export const createUser = async ({
-  name,
   email,
   password,
+  name,
 }: CreateUserParams) => {
   try {
     const newAccount = await account.create(ID.unique(), email, password, name);
-    if (!newAccount) throw new Error("Account not created");
+    if (!newAccount) throw Error("Account not created");
+
     await signIn({ email, password });
 
     const avatarUrl = avatars.getInitialsURL(name);
