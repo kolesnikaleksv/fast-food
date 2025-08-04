@@ -9,18 +9,18 @@ type AuthState = {
 
   setIsAuthenticated: (value: boolean) => void;
   setUser: (user: User | null) => void;
-  setLoading: (value: boolean) => void;
+  setLoading: (loading: boolean) => void;
 
   fetchAuthenticatedUser: () => Promise<void>;
 };
 
 const useAuthStore = create<AuthState>((set) => ({
-  isAuthenticated: true,
+  isAuthenticated: false,
   user: null,
   isLoading: true,
   setIsAuthenticated: (value) => set({ isAuthenticated: value }),
   setUser: (user) => set({ user }),
-  setLoading: (value) => set({ isLoading: value }),
+  setLoading: (loading) => set({ isLoading: loading }),
 
   fetchAuthenticatedUser: async () => {
     set({ isLoading: true });

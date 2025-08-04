@@ -18,7 +18,7 @@ const SignUp = () => {
       );
     setIsSubmitting(true);
     try {
-      await createUser({ name, email, password });
+      await createUser({ email, password, name });
 
       router.replace("/");
     } catch (error: any) {
@@ -27,6 +27,7 @@ const SignUp = () => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <View className="gap-7 bg-white rounded-lg p-5 mt-5r">
       <CustomInput
