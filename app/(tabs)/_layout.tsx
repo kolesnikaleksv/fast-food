@@ -6,7 +6,7 @@ import { TabBarIconProps } from "@/type";
 import { images } from "@/constants";
 import useAuthStore from "@/store/auth.store";
 
-const TabBarIcont = ({ focused, icon, title }: TabBarIconProps) => (
+const TabBarIcon = ({ focused, icon, title }: TabBarIconProps) => (
   <View className="tab-icon">
     <Image
       source={icon}
@@ -55,7 +55,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ focused }) => (
-            <TabBarIcont focused={focused} icon={images.home} title="Home" />
+            <TabBarIcon focused={focused} icon={images.home} title="Home" />
           ),
         }}
       />
@@ -64,11 +64,7 @@ export default function TabLayout() {
         options={{
           title: "Search",
           tabBarIcon: ({ focused }) => (
-            <TabBarIcont
-              focused={focused}
-              icon={images.search}
-              title="Search"
-            />
+            <TabBarIcon focused={focused} icon={images.search} title="Search" />
           ),
         }}
       />
@@ -77,7 +73,7 @@ export default function TabLayout() {
         options={{
           title: "Cart",
           tabBarIcon: ({ focused }) => (
-            <TabBarIcont focused={focused} icon={images.bag} title="Cart" />
+            <TabBarIcon focused={focused} icon={images.bag} title="Cart" />
           ),
         }}
       />{" "}
@@ -86,7 +82,7 @@ export default function TabLayout() {
         options={{
           title: "Profile",
           tabBarIcon: ({ focused }) => (
-            <TabBarIcont
+            <TabBarIcon
               focused={focused}
               icon={images.person}
               title="Profile"
